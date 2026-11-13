@@ -109,7 +109,7 @@ function mountLayout(active) {
         <div class="w-9 h-9 rounded-xl bg-crimson-600 flex items-center justify-center text-white shrink-0"><i data-lucide="droplet" class="w-5 h-5"></i></div>
         <div>
           <span class="text-white font-bold block text-sm">المنصة الذكية للتبرع بالدم وإدارة المتبرعين (IBDDMP)</span>
-          <span class="text-xs text-slate-500">نموذج مشروع التخرج الهندسي المتكامل • جميع الحقوق محفوظة</span>
+          <span class="text-xs text-slate-500">جميع الحقوق محفوظة</span>
         </div>
       </div>
       <div class="text-xs text-slate-500">مدعوم بتقنيات السحابة الفورية وخوارزميات الذكاء الاصطناعي الطبي</div>
