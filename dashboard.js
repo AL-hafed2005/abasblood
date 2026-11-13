@@ -37,11 +37,16 @@ function renderRecent() {
   box.innerHTML = state.log.slice(0, 6).map(l => {
     const k = LOG_KINDS[l.kind] || { label: l.kind, cls: 'bg-slate-100 text-slate-700', sign: '' };
     const det = l.donorName || l.note || '';
-    return `<div class="flex items-center justify-between gap-2 py-2 border-b border-slate-100 text-xs">
-      <div class="flex items-center gap-2 min-w-0"><span class="px-2 py-0.5 rounded-md font-black ${k.cls}">${k.label}</span>
-      <span class="font-black text-slate-800" dir="ltr">${escapeHTML(l.bloodType || '')}${l.units ? ' ' + k.sign + l.units : ''}</span>
-      <span class="text-slate-500 truncate">${escapeHTML(det)}</span></div>
-      <span class="text-slate-400 shrink-0" dir="ltr">${fmtTime(l.ts)}</span></div>`;
+    return `<div class="py-2.5 border-b border-slate-100 last:border-0 text-xs">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="px-2 py-0.5 rounded-md font-black ${k.cls}">${k.label}</span>
+          <span class="font-black text-slate-800" dir="ltr">${escapeHTML(l.bloodType || '')}${l.units ? ' ' + k.sign + l.units : ''}</span>
+        </div>
+        <span class="text-slate-400 shrink-0" dir="ltr">${fmtTime(l.ts)}</span>
+      </div>
+      ${det ? `<div class="mt-1 text-slate-500 break-words leading-relaxed">${escapeHTML(det)}</div>` : ''}
+    </div>`;
   }).join('');
 }
 
